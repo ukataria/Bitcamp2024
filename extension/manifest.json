@@ -1,15 +1,13 @@
 {
-    "manifest_version": 3,
-    "name": "Hello Pinterest",
-    "version": "1.0",
-    "description": "Add 'Hello' under images on Pinterest",
-    "permissions": ["activeTab"],
-    "content_scripts": [
-      {
-        "matches": ["*://*.pinterest.com/*"],
-        "js": ["content.js"],
-        "css": ["style.css"]
-      }
-    ]
-  }
-  
+  "manifest_version": 3,
+  "name": "Image Greeting and Log",
+  "version": "1.0",
+  "description": "Add 'Hello' under images on any website and log image details",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
