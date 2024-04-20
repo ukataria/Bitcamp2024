@@ -1,4 +1,10 @@
 /* style.css */
-div {
-    font-family: Arial, sans-serif;
+div.result-popup {
+    position: absolute;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1000;
+    pointer-events: none; /* Ensure clicks pass through the div */
 }
