@@ -14,7 +14,9 @@ model = YOLO('V4.pt')
 def analyze():
     print("Got Request")
     print(request)
-    data = request.args.get("imgurl")
+    print()
+    print(request.headers)
+    data = request.headers.get('imgurl')
     image_url = data
     print(image_url)
     print()
