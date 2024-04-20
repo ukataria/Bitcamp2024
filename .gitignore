@@ -3,7 +3,7 @@ BitCamp2024/*
 BitCamp2024
 venv/
 venv*/
-website2/my-app/node_modules*/
+website2/audit-ai/node_modules*/
 yolov5/
 *.pyc
 __pycache__/
