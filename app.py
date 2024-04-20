@@ -27,6 +27,7 @@ def analyze():
     print(result.probs)
     if result.probs.top1 == 0:
         resultJson["result"] = "fake"
+        resultJson["confidence"] = str(result.probs.top1conf)
     else:
         resultJson["result"] = "real"
     

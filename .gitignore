@@ -5,4 +5,4 @@ venv/
 yolov5/
 *.pyc
 __pycache__/
-*.pt
+

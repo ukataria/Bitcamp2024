@@ -7,7 +7,7 @@ document.addEventListener('mouseover', function(event) {
   
         // Create a new div element to display 'Hello'
         const helloDiv = document.createElement('div');
-        helloDiv.textContent = 'Hello';
+        helloDiv.textContent = analyze();
         helloDiv.style.cssText = 'position: absolute; color: white; background-color: black; padding: 5px; border-radius: 5px; z-index: 1000; pointer-events: none;';
   
         // Append 'Hello' div to the body
