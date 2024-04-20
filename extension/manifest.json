@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Image Greeting and Log",
+  "version": "1.0",
+  "description": "Add 'Hello' under images on any website and log image details",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.facebook.com/*",
+        "*://*.twitter.com/*",
+        "*://*.instagram.com/*",
+        "*://*.pinterest.com/*",
+        "*://*.tumblr.com/*",
+        "*://*.imgur.com/*",
+        "*://*.flickr.com/*",
+        "*://*.reddit.com/*",
+        "*://*.500px.com/*",
+        "*://*.unsplash.com/*",
+        "*://*.deviantart.com/*",
+        "*://*.photobucket.com/*"
+      ],
+      "js": ["scripts/content.js"],
+      "css": ["scripts/style.css"]
+    }
+  ]
+}
