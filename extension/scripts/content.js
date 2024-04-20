@@ -5,6 +5,8 @@ document.addEventListener('mouseover', function(event) {
     // Log the image element to the console
     console.log(imgSrc);
 
+    chrome.runtime.sendMessage({ imageUrl: imgSrc });
+    
     // Create a new div element to display 'Hello'
     const helloDiv = document.createElement('div');
     helloDiv.textContent = 'Hello';

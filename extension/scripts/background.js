@@ -1,13 +1,13 @@
 // This listener will wait for messages from content.js
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    // Define the API endpoint, adjust if your server URL is different
-    const serverEndpoint = 'http://localhost:5000/analyze';
+    // Use your Heroku app's endpoint for image analysis
+    const serverEndpoint = 'https://guarded-wildwood-07790-f63d3116a68b.herokuapp.com/analyze';
 
-    // Fetch the image analysis result from your Python server
+    // Fetch the image analysis result from your server
     fetch(serverEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ imageUrl: request.imgSrc }) // Send the image URL
+        body: JSON.stringify({ imageUrl: request.imageUrl }) // Send the image URL
     })
     .then(response => response.json()) // Convert the response to JSON
     .then(data => {
@@ -16,7 +16,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     })
     .catch(error => {
         console.error('Error:', error);
-        // Handle any errors
+        // Optionally send an error back to the content script
+        chrome.tabs.sendMessage(sender.tab.id, { error: 'Failed to analyze image.' });
     });
 
     // Return true to indicate that you want to send a response asynchronously
