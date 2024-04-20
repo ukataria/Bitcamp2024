@@ -1,4 +1,4 @@
-const imageUrl = "https://i.pinimg.com/474x/53/0f/c5/530fc5dc0060c55c2c18f88bc0ed93b0.jpg"; // Replace this with your image URL
+const imageUrl = "https://i.pinimg.com/736x/44/52/43/445243f506841e51fe6f6437d8dac696.jpg"; // Replace this with your image URL
 
 // Define the data object with the header
 const data = {
