@@ -6,4 +6,4 @@ venv/
 yolov5/
 *.pyc
 __pycache__/
-
+website2/audit-ai/node_modules*/
