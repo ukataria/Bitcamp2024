@@ -2,4 +2,7 @@ archive/
 BitCamp2024/*
 BitCamp2024
 venv/
-yolov5/ 
+yolov5/
+*.pyc
+__pycache__/
+*.pt
