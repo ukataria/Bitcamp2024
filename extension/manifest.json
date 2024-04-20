@@ -7,9 +7,6 @@
   "host_permissions": [
     "https://guarded-wildwood-07790-f63d3116a68b.herokuapp.com/"
   ],
-  "background": {
-    "service_worker": "scripts/background.js"
-  },
   "content_scripts": [
     {
       "matches": [
