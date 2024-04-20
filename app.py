@@ -1,16 +1,31 @@
 from flask import Flask, request, jsonify
+import torch
+from flask_cors import CORS
 from ultralytics import YOLO
-import numpy as np
+
 
 app = Flask(__name__)
-model = YOLO("model.pt")
+CORS(app)  # Enable CORS for all domains on all routes
+
+# Load your custom model
+model = YOLO('model.pt')
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
     data = request.get_json()
     image_url = data['image_url']
-    result = model(image_url)
-    return jsonify({"result": "fake" if result.probs.top1 == 0 else "real"})
+
+    # Ensure the image_url is a string, since the model expects a URL
+    if not isinstance(image_url, str):
+        return jsonify({"error": "Invalid image URL type"}), 400
+
+
+    result = model(image_url)[0]
+
+    if result.probs.top1 == 0:
+        return "fake"
+    else:
+        return "real"
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
