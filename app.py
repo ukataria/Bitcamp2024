@@ -8,24 +8,29 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all domains on all routes
 
 # Load your custom model
-model = YOLO('model.pt')
+model = YOLO('V4.pt')
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
-    data = request.get_json()
-    image_url = data['image_url']
-
-    # Ensure the image_url is a string, since the model expects a URL
-    if not isinstance(image_url, str):
-        return jsonify({"error": "Invalid image URL type"}), 400
-
+    print("Got Request")
+    print(request)
+    data = request.args.get("imgurl")
+    image_url = data
+    print(image_url)
+    print()
+    print()
 
     result = model(image_url)[0]
 
+    resultJson = {}
+    print(result.path)
+    print(result.probs)
     if result.probs.top1 == 0:
-        return "fake"
+        resultJson["result"] = "fake"
     else:
-        return "real"
+        resultJson["result"] = "real"
+    
+    return jsonify(resultJson), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
