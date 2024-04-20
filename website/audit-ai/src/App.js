@@ -4,11 +4,11 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-        <nav>
+        <nav className="flex-row">
           <div class="logo-container">
             <img src="logos\png\logo-no-background.png" alt="AuditAI Logo" />
           </div>
-          <div class="nav-links">
+          <div class="nav-links flex-row">
             <a href="#">Home</a>
             <a href="https://devpost.com">Devpost Submission</a>
             <a href="https://github.com/ukataria/Bitcamp2024">Github Repository</a>

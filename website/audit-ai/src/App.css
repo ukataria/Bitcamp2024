@@ -13,6 +13,25 @@
   }
 }
 
+
+.App{
+  background-color: #0A1A2E;
+  min-height: 100vh;
+  padding-top: 2vh;
+  padding-left: 5vh;
+  padding-right: 5vh;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+
+nav{
+  flex-basis: 100vh;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
