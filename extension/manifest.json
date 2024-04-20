@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "manifest_version": 3,
   "name": "Image Greeting and Log",
   "version": "1.0",
@@ -11,3 +12,19 @@
     }
   ]
 }
+=======
+    "manifest_version": 3,
+    "name": "Hello Pinterest",
+    "version": "1.0",
+    "description": "Add 'Hello' under images on Pinterest",
+    "permissions": ["activeTab"],
+    "content_scripts": [
+      {
+        "matches": ["*://*.pinterest.com/*"],
+        "js": ["scripts/content.js"],
+        "css": ["style.css"]
+      }
+    ]
+  }
+  
+>>>>>>> 8bd55e3985fd0f33a6d42361af2713258f6f90d4
