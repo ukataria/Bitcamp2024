@@ -1,57 +1,157 @@
-.App {
-  text-align: center;
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #022B5B;
+  color: #79BFCD;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
-.App{
+/* Navigation Styles */
+nav {
   background-color: #0A1A2E;
-  min-height: 100vh;
-  padding-top: 2vh;
-  padding-left: 5vh;
-  padding-right: 5vh;
-}
-
-.flex-row{
+  color: #BBE6DB;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between; 
-}
-
-nav{
-  flex-basis: 100vh;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px 20px;
+  height: 13vh;
+}
+
+.nav-links a {
+  color: #BBE6DB;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 2.5vh;
+  position: relative; /* Ensure proper positioning for pseudo-element */
+  font-family: 'Poppins';
+  font-weight: 400;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: -4px;
+  left: 0;
+  background-color: #BBE6DB;
+  transition: width 0.3s ease; /* Transition width for smooth animation */
+
+  font-weight: 600;
+}
+
+.nav-links a:hover::after {
+  width: 100%; /* Expand the underline on hover */
+}
+
+.logo-container img {
+  height: 10vh;
+  padding: 1vh;
+}
+
+.logo-container h1 {
+  font-size: 6vh;
+  font-family: 'Big Shoulders Stencil Text';
+  font-weight: 900;
+}
+
+.logo-container h2 {
+  padding: 2.5vh;
+  padding-right: 1vh;
+  font-size: 6vh;
+  font-family: 'Big Shoulders Stencil Text';
+  font-weight: 600;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Main Body Styles */
+.body {
+  text-align: center;
+  padding: 20px;
+}
+
+.body h1 {
+  color: #1488B9;
+  font-size: 4.5rem;
+  font-family: 'Big Shoulders Stencil Text';
+  font-weight: 800;
+  padding: 20px;
+  line-height: 90%;
+}
+
+.body h2 {
+  color: #79BFCD;
+  font-family: 'Sirin Stencil';
+  font-size: 2.25rem;
+  padding-top: 0px;
+  line-height: 90%;
+}
+
+/* Game Section Styles */
+.game {
+  background-color: #0A1A2E;
+  margin: auto;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 60%;
+}
+
+.game p {
+  padding: 5%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.game h3 {
+  color: #BBE6DB;
+  font-family: 'Sirin Stencil';
+  font-size: 2.25rem;
+  word-spacing: 10px;
+}
+
+button {
+  background-color: #004aad;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #00377a;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-links a {
+    margin-bottom: 10px;
   }
 }
