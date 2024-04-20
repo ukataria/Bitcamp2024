@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import torch
 from flask_cors import CORS
 from ultralytics import YOLO
+import os
 
 
 app = Flask(__name__)
@@ -23,6 +24,8 @@ def analyze():
     print()
 
     result = model(image_url)[0]
+    localPath = image_url.split("/")[-1]
+    os.remove(localPath)
 
     resultJson = {}
     print(result.path)
