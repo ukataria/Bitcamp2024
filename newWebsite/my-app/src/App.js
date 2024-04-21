@@ -27,8 +27,8 @@ function App() {
     { src: real9, isFake: true },
     { src: fake9, isFake: true },
     { src: real10, isFake: true },
-    { src: fake5, isFake: true },
     { src: fake10, isFake: true },
+    { src: real5, isFake: true },
   ];
 
   const totalImages = quizPhotos.length;
