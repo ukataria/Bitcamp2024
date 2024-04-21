@@ -1,15 +1,34 @@
 import React, { useState } from 'react';
 import logo from './media/logo.png';
-import hackathonFake from './quizPhotos/hackathon-fake.webp';
-import sauronFake from './quizPhotos/sauron-fake.jpeg';
-import sauronReal from './quizPhotos/sauron-real.webp';
+import fake1 from './quizPhotos/fake1.jpg';
+import fake5 from './quizPhotos/fake5.jpg';
+import fake6 from './quizPhotos/fake6.jpg';
+import fake7 from './quizPhotos/fake7.jpg';
+import fake9 from './quizPhotos/fake9.jpg';
+import fake10 from './quizPhotos/fake10.jpg';
+
+import real3 from './quizPhotos/real3.jpg';
+import real4 from './quizPhotos/real4.jpg';
+import real5 from './quizPhotos/real5.jpg';
+import real6 from './quizPhotos/real6.jpg';
+import real9 from './quizPhotos/real9.jpg';
+import real10 from './quizPhotos/real10.jpg';
 import './App.css';
 
 function App() {
   const quizPhotos = [
-    { src: hackathonFake, isFake: true },
-    { src: sauronFake, isFake: true },
-    { src: sauronReal, isFake: false },
+    { src: real3, isFake: true },
+    { src: real4, isFake: true },
+    { src: fake1, isFake: true },
+    { src: real6, isFake: true },
+    { src: fake5, isFake: true },
+    { src: fake6, isFake: true },
+    { src: fake7, isFake: true },
+    { src: real9, isFake: true },
+    { src: fake9, isFake: true },
+    { src: real10, isFake: true },
+    { src: fake5, isFake: true },
+    { src: fake10, isFake: true },
   ];
 
   const totalImages = quizPhotos.length;
