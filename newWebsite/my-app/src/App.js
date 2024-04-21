@@ -62,8 +62,11 @@ function App() {
             <div className="imgBox">
               <img src={quizPhotos[currentImageIndex].src} alt="Quiz Image" className="center-fit" />
             </div>
-            <button onClick={() => handleButtonClick(true)}>Fake</button>
-            <button onClick={() => handleButtonClick(false)}>Real</button>
+            <div>
+              <button onClick={() => handleButtonClick(true)}>Fake</button>
+              <button onClick={() => handleButtonClick(false)}>Real</button>
+            </div>
+            
           </div>
         </div>
       </div>
