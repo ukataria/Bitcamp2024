@@ -144,6 +144,17 @@ button:hover {
   background-color: #00377a;
 }
 
+.imgbox {
+  display: grid;
+  height: 10%;
+}
+
+.center-fit {
+  max-width: 100%;
+  max-height: 100vh;
+  margin: auto;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav-links {

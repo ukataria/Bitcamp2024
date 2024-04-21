@@ -1,4 +1,5 @@
 import logo from './media/logo.png';
+import quizPhoto from './quizPhotos/sauron-fake.jpeg'
 import './App.css';
 
 function App() {
@@ -26,7 +27,9 @@ function App() {
       <div class = "game">
         <p>Welcome to Audit AI's Image guessing game! In the new world, with AI generators like DALLE 2 and Stable Diffusion, it bcomes increasingly hard to detect if an image is AI generated. Our trained ML model has an accuracy of 95% on this subset of 20 images, do you think you can do better? Start playing the game to find out, and realize just how good some AI images can get.</p>
         <h3>Correct Answers: 0</h3>
-        <img src = "website/audit-ai/src/photos/pinterest-fake.jpg" alt="The Fake Image"/>
+        <div class = "imgBox">
+          <img src = {quizPhoto} alt="The Fake Image" class="center-fit"/>
+        </div>
         <button>Real</button>
         <button>Fake</button>
       </div>
