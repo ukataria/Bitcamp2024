@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/Bitcamp2024/static/css/main.58c400cb.css",
-    "main.js": "/Bitcamp2024/static/js/main.380173ec.js",
-    "static/js/453.ed3810f9.chunk.js": "/Bitcamp2024/static/js/453.ed3810f9.chunk.js",
-    "static/media/real4.jpg": "/Bitcamp2024/static/media/real4.a0c3fb39c9782170a779.jpg",
-    "static/media/cryinggif.gif": "/Bitcamp2024/static/media/cryinggif.7811f5d85845be73a659.gif",
-    "static/media/real5.jpg": "/Bitcamp2024/static/media/real5.1aca398ed64e8d397ad7.jpg",
-    "static/media/real6.jpg": "/Bitcamp2024/static/media/real6.ce8ae34dc99ae054b800.jpg",
-    "static/media/real3.jpg": "/Bitcamp2024/static/media/real3.0bc297ee4ebaac2e9162.jpg",
-    "static/media/fake1.jpg": "/Bitcamp2024/static/media/fake1.f03eed16ca67483ec4f6.jpg",
-    "static/media/fake7.jpeg": "/Bitcamp2024/static/media/fake7.b654b0ef14b43484c7a7.jpeg",
-    "static/media/fake2.jpeg": "/Bitcamp2024/static/media/fake2.3f4f0994d84c31fa2f56.jpeg",
-    "static/media/fake9.jpeg": "/Bitcamp2024/static/media/fake9.c85c15075adc712af3da.jpeg",
-    "static/media/fake5.jpeg": "/Bitcamp2024/static/media/fake5.87aaacb6ffd8f2cdc5df.jpeg",
-    "static/media/real9.jpg": "/Bitcamp2024/static/media/real9.1bee87e14d9781f2c0e0.jpg",
-    "static/media/fake10.jpeg": "/Bitcamp2024/static/media/fake10.5d6ac2d245fee1e9821a.jpeg",
-    "static/media/logo.png": "/Bitcamp2024/static/media/logo.5e7e89211a170e2a13d3.png",
-    "static/media/real10.jpeg": "/Bitcamp2024/static/media/real10.aa7bcd0e83b29bd9160b.jpeg",
-    "index.html": "/Bitcamp2024/index.html",
-    "main.58c400cb.css.map": "/Bitcamp2024/static/css/main.58c400cb.css.map",
-    "main.380173ec.js.map": "/Bitcamp2024/static/js/main.380173ec.js.map",
-    "453.ed3810f9.chunk.js.map": "/Bitcamp2024/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/static/css/main.58c400cb.css",
+    "main.js": "/static/js/main.8e230fe4.js",
+    "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
+    "static/media/real4.jpg": "/static/media/real4.a0c3fb39c9782170a779.jpg",
+    "static/media/cryinggif.gif": "/static/media/cryinggif.7811f5d85845be73a659.gif",
+    "static/media/real5.jpg": "/static/media/real5.1aca398ed64e8d397ad7.jpg",
+    "static/media/real6.jpg": "/static/media/real6.ce8ae34dc99ae054b800.jpg",
+    "static/media/real3.jpg": "/static/media/real3.0bc297ee4ebaac2e9162.jpg",
+    "static/media/fake1.jpg": "/static/media/fake1.f03eed16ca67483ec4f6.jpg",
+    "static/media/fake7.jpeg": "/static/media/fake7.b654b0ef14b43484c7a7.jpeg",
+    "static/media/fake2.jpeg": "/static/media/fake2.3f4f0994d84c31fa2f56.jpeg",
+    "static/media/fake9.jpeg": "/static/media/fake9.c85c15075adc712af3da.jpeg",
+    "static/media/fake5.jpeg": "/static/media/fake5.87aaacb6ffd8f2cdc5df.jpeg",
+    "static/media/real9.jpg": "/static/media/real9.1bee87e14d9781f2c0e0.jpg",
+    "static/media/fake10.jpeg": "/static/media/fake10.5d6ac2d245fee1e9821a.jpeg",
+    "static/media/logo.png": "/static/media/logo.5e7e89211a170e2a13d3.png",
+    "static/media/real10.jpeg": "/static/media/real10.aa7bcd0e83b29bd9160b.jpeg",
+    "index.html": "/index.html",
+    "main.58c400cb.css.map": "/static/css/main.58c400cb.css.map",
+    "main.8e230fe4.js.map": "/static/js/main.8e230fe4.js.map",
+    "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.58c400cb.css",
-    "static/js/main.380173ec.js"
+    "static/js/main.8e230fe4.js"
   ]
 }
