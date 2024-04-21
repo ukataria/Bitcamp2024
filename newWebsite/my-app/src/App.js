@@ -12,8 +12,10 @@ function App() {
     { src: sauronReal, isFake: false },
   ];
 
+  const totalImages = quizPhotos.length;
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
 
   const handleButtonClick = (guess) => {
     const currentPhoto = quizPhotos[currentImageIndex];
@@ -23,9 +25,37 @@ function App() {
       setCorrectAnswers((prev) => prev + 1);
     }
 
-    // Move to the next image, looping back to the beginning
-    const nextIndex = (currentImageIndex + 1) % quizPhotos.length;
-    setCurrentImageIndex(nextIndex);
+    const nextIndex = currentImageIndex + 1;
+
+    if (nextIndex == totalImages) {
+      setGameOver(true); // Indicate the game has ended
+    } else {
+      setCurrentImageIndex(nextIndex);
+    }
+  };
+
+  const calculatePercentageCorrect = () => {
+    return (correctAnswers / totalImages) * 100;
+  };
+
+  const renderEndScreen = () => {
+    const correctPercentage = calculatePercentageCorrect(); // Calculate the correct answer percentage
+    const aiAccuracy = 95; // AI's accuracy benchmark
+  
+    let resultMessage = ''; // Initial result message
+  
+    if (correctPercentage > aiAccuracy) {
+      resultMessage = 'You Win! You beat the AI!';
+    } else {
+      resultMessage = 'You Lose! The AI beat you!';
+    }
+  
+    return (
+      <div>
+        <h2>{resultMessage}</h2>
+        <p>You answered with {correctPercentage.toFixed(2)}% accuracy</p> {/* Display the player's accuracy */}
+      </div>
+    );
   };
 
   return (
@@ -57,17 +87,21 @@ function App() {
             <h3>Correct Answers: {correctAnswers}</h3>
           </div>
         </div>
+
         <div className="column2">
-          <div className="game">
-            <div className="imgBox">
-              <img src={quizPhotos[currentImageIndex].src} alt="Quiz Image" className="center-fit" />
+          {gameOver ? (
+            <div className="end-screen"> {renderEndScreen()} </div>
+          ) : (
+            <div className="game">
+              <div className="imgBox">
+                <img src={quizPhotos[currentImageIndex].src} alt="Quiz Image" className="center-fit" />
+              </div>
+              <div className="buttons">
+                <button onClick={() => handleButtonClick(true)}>AI GENERATED</button>
+                <button onClick={() => handleButtonClick(false)}>MAN-MADE</button>
+              </div>
             </div>
-            <div className="buttons">
-              <button onClick={() => handleButtonClick(true)}>Fake</button>
-              <button onClick={() => handleButtonClick(false)}>Real</button>
-            </div>
-            
-          </div>
+          )}
         </div>
       </div>
     </div>
