@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all domains on all routes
 
 # Load your custom model
-model = YOLO('V4.pt')
+model = YOLO('v5.pt')
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
@@ -30,7 +30,7 @@ def analyze():
     resultJson = {}
     print(result.path)
     print(result.probs)
-    if result.probs.top1 == 0:
+    if result.probs.top1 == 1:
         resultJson["result"] = "fake"
         resultJson["confidence"] = str(result.probs.top1conf.item())
     else:
