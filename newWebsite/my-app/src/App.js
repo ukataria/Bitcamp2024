@@ -66,7 +66,6 @@ function App() {
               <button onClick={() => handleButtonClick(true)}>Fake</button>
               <button onClick={() => handleButtonClick(false)}>Real</button>
             </div>
-            
           </div>
         </div>
       </div>
