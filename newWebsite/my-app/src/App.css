@@ -92,6 +92,40 @@ nav {
 }
 
 
+/* Text Box */
+.left-box{
+  background-color: #79BFCD;
+  margin: auto;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 90%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-box p {
+  color: #29697A;
+  padding: 5%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 2.4vh;
+  text-align: left;
+}
+
+.left-box h3 {
+  margin-top: auto;
+  color: #29697A;
+  font-family: 'Sirin Stencil';
+  font-size: 6vh;
+  word-spacing: 10px;
+}
+
 /* Main Body Styles */
 .body {
   text-align: center;
@@ -106,6 +140,7 @@ nav {
   padding: 20px;
   line-height: 90%;
 }
+
 
 .body h2 {
   color: #79BFCD;
@@ -125,24 +160,6 @@ nav {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   text-align: center;
   width: 60%;
-}
-
-.game p {
-  padding: 5%;
-  padding-top: 1.5%;
-  padding-bottom: 1.5%;
-  font-family: 'Poppins';
-  font-weight: 400;
-  font-size: 1rem;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-.game h3 {
-  color: #BBE6DB;
-  font-family: 'Sirin Stencil';
-  font-size: 2.25rem;
-  word-spacing: 10px;
 }
 
 button {
