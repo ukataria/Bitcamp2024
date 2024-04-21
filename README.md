@@ -40,7 +40,7 @@ Here are the setup instructions:
 3. Afterward, you should see the extension loaded on your menu bar and begin operating. _Make sure to start the server before expecting results_
 
 # Methodology
-The primary algorithm to detect if an image is AI-Generated is to use a Convolution Neural Network (CNN). To train such an algorithm, we need a lot of data, a method to train, and a way to test if our results are useful or not. 
+The primary algorithm to detect if an image is AI-generated is to use a Convolution Neural Network (CNN). To train such an algorithm, we need a lot of data, a method to train, and a way to test if our results are useful or not. 
 
 ## Data
 To get a variety of AI Generated and manmade images, we turned to datasets on Kaggle. Using Kaggle, we found out about 4 different datasets, each with its pros and cons. 
@@ -49,12 +49,17 @@ To get a variety of AI Generated and manmade images, we turned to datasets on Ka
 3. {}
 4. {}
 
-For each of these datasets, we split the data into two classes, either "Fake" if it was AI Generated, or "Real" if it was human-drawn. Afterward, we split it into train, test, and validation folders for the model to learn and test itself, using a 0.8, 0.1, and 0.1 split. Due to the limited time in the hackathon, we were unable to experiment with different data splits, including 0.7, 0.2, and 0.1. 
+For each of these datasets, we split the data into two classes, either "Fake" if it was AI Generated, or "Real" if it was human-drawn. Afterward, we split it into train, test, and validation folders for the model to learn and test itself, using 0.8, 0.1, and 0.1 splits. Due to the limited time in the hackathon, we were unable to experiment with different data splits, including 0.7, 0.2, and 0.1. 
 
 ## Training
 To train our code, we did not have the large amount of data required to train a CNN from scratch, which we estimate to be at least 10 times the size of our largest dataset. As a result, we worked off a pre-existing model, the YoloV8 from Ultralytics, an industry-leading single classification model. Upon this model, we trained our 4 different datasets with a variety of epochs, from 10 to 50, depending on the size of the dataset, and the overall trend we noticed. Since we had limited compute availability and a severe time crunch, optimizing for image size was not a possibility, so a default value of ``640`` was used. 
 
 We trained a majority of our code on Google Collab, working off their L4 Hardware Accelerators. The code for training these systems can be found by ``train.ipynb``, and would download the small version of the model. Again, due to time constraints, we did not have the time to utilize the larger models such as the medium or large versions, and we found that nano was not great at picking apart minor differences. 
+
+## Testing
+To test our code, we used both the built-in test folder of data and a variety of real-world tests. Since the datasets that we trained on had very different characteristics, each of the models we trained was quite good at detecting the differences between AI and Human images within their respective styles, but could severely struggle in real-world tests or on other datasets.
+
+This is why we implemented a real-world testing procedure of working on Pinterest images that none of the models had ever seen, and then using that to judge overall performance. We would test for confidence and accuracy levels, and throughout the hackathon, we continued to find better datasets and improvements to further fine tune our models and increase their performance. 
 
 # Results
 
