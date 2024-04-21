@@ -6,7 +6,6 @@ import fake6 from './quizPhotos/fake6.jpg';
 import fake7 from './quizPhotos/fake7.jpg';
 import fake9 from './quizPhotos/fake9.jpg';
 import fake10 from './quizPhotos/fake10.jpg';
-
 import real3 from './quizPhotos/real3.jpg';
 import real4 from './quizPhotos/real4.jpg';
 import real5 from './quizPhotos/real5.jpg';
@@ -17,18 +16,18 @@ import './App.css';
 
 function App() {
   const quizPhotos = [
-    { src: real3, isFake: true },
-    { src: real4, isFake: true },
     { src: fake1, isFake: true },
-    { src: real6, isFake: true },
     { src: fake5, isFake: true },
     { src: fake6, isFake: true },
     { src: fake7, isFake: true },
-    { src: real9, isFake: true },
     { src: fake9, isFake: true },
-    { src: real10, isFake: true },
     { src: fake10, isFake: true },
-    { src: real5, isFake: true },
+    { src: real3, isFake: false },
+    { src: real4, isFake: false },
+    { src: real5, isFake: false },
+    { src: real6, isFake: false },
+    { src: real9, isFake: false },
+    { src: real10, isFake: false },
   ];
 
   const totalImages = quizPhotos.length;
@@ -46,8 +45,8 @@ function App() {
 
     const nextIndex = currentImageIndex + 1;
 
-    if (nextIndex == totalImages) {
-      setGameOver(true); // Indicate the game has ended
+    if (nextIndex >= totalImages) {
+      setGameOver(true);
     } else {
       setCurrentImageIndex(nextIndex);
     }
@@ -58,21 +57,21 @@ function App() {
   };
 
   const renderEndScreen = () => {
-    const correctPercentage = calculatePercentageCorrect(); // Calculate the correct answer percentage
-    const aiAccuracy = 95; // AI's accuracy benchmark
-  
-    let resultMessage = ''; // Initial result message
-  
+    const correctPercentage = calculatePercentageCorrect();
+    const aiAccuracy = 95;
+
+    let resultMessage = '';
+
     if (correctPercentage > aiAccuracy) {
       resultMessage = 'You Win! You beat the AI!';
     } else {
       resultMessage = 'You Lose! The AI beat you!';
     }
-  
+
     return (
-      <div>
+      <div className="game">
         <h2>{resultMessage}</h2>
-        <p>You answered with {correctPercentage.toFixed(2)}% accuracy</p> {/* Display the player's accuracy */}
+        <p>You answered with {correctPercentage.toFixed(2)}% accuracy</p>
       </div>
     );
   };
@@ -101,7 +100,7 @@ function App() {
           </div>
           <div className="left-box">
             <p>
-              Welcome to Audit AI's Image guessing game! With AI generators like DALLE 2 and Stable Diffusion, it's increasingly hard to detect if an image is AI-generated. Our trained ML model has 95% accuracy on this subset of 20 images. Can you do better? Start playing to find out.
+              Welcome to Audit AI's Image guessing game! With AI generators like DALLE 2 and Stable Diffusion, it's increasingly hard to detect if an image is AI-generated. Our trained ML model has 95% accuracy on this subset of 12 images. Can you do better? Start playing to find out.
             </p>
             <h3>Correct Answers: {correctAnswers}</h3>
           </div>
@@ -109,7 +108,9 @@ function App() {
 
         <div className="column2">
           {gameOver ? (
-            <div className="end-screen"> {renderEndScreen()} </div>
+            <div className="game">
+              {renderEndScreen()} {/* Display the end screen when the game is over */}
+            </div>
           ) : (
             <div className="game">
               <div className="imgBox">
