@@ -44,10 +44,10 @@ The primary algorithm to detect if an image is AI-generated is to use a Convolut
 
 ## Data
 To get a variety of AI Generated and manmade images, we turned to datasets on Kaggle. Using Kaggle, we found out about 4 different datasets, each with its pros and cons. 
-1. {}
-2. {}
-3. {}
-4. {}
+1. https://www.kaggle.com/datasets/superpotato9/dalle-recognition-dataset?select=real -- A dataset of a variety of different AI Generated methods, that is around ~20,000 images
+2. https://www.kaggle.com/datasets/ravidussilva/real-ai-art -- A dataset of ~185,000 images that are based on specific artistic styles like renaissance or baroque paintings
+3. https://www.kaggle.com/datasets/birdy654/cifake-real-and-ai-generated-synthetic-images -- A Large dataset of ~120,000 images that was incredibly small images
+4. https://www.kaggle.com/datasets/gauravduttakiit/dalle-recognition-dataset - A DALLE specific dataset of around ~6400 images
 
 For each of these datasets, we split the data into two classes, either "Fake" if it was AI Generated, or "Real" if it was human-drawn. Afterward, we split it into train, test, and validation folders for the model to learn and test itself, using 0.8, 0.1, and 0.1 splits. Due to the limited time in the hackathon, we were unable to experiment with different data splits, including 0.7, 0.2, and 0.1. 
 
