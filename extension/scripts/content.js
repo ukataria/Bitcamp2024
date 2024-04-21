@@ -1,91 +1,72 @@
-// Listen for mouseover events on all elements
 document.addEventListener('mouseover', function(event) {
     if (event.target.tagName === 'IMG') {
-        const imgSrc = event.target.getAttribute('src');
-        // Log the image element to the console
-        console.log(imgSrc);
+        let imgElement = event.target;
+        let hoverTimer; // Timer for delaying the fetch call
 
-        // Create a new div element to display 'Hello'
-        const helloDiv = document.createElement('div');
-        helloDiv.textContent = analyze();
-        helloDiv.style.cssText = 'position: absolute; color: white; background-color: black; padding: 5px; border-radius: 5px; z-index: 1000; pointer-events: none;';
+        const imageUrl = imgElement.getAttribute('src'); // Get image URL
 
-        // Append 'Hello' div to the body
-        document.body.appendChild(helloDiv);
+        hoverTimer = setTimeout(() => { // Set a timeout to delay the fetch call
+            // Define the data object for the POST request
+            const data = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'imgurl': imageUrl
+                }
+            };
 
-        // Position the helloDiv below the image
-        const rect = event.target.getBoundingClientRect();
-        helloDiv.style.top = `${rect.bottom + window.scrollY}px`;
-        helloDiv.style.left = `${rect.left + window.scrollX}px`;
+            // Make the fetch request to your Flask server
+            fetch('http://127.0.0.1:5000/analyze', data)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json(); // Assuming the server returns JSON
+                })
+                .then(jsonResponse => {
+                    // Create a new div element to display results
+                    const resultDiv = document.createElement('div');
 
-        // Remove the 'Hello' div when the mouse moves away from the image
-        event.target.addEventListener('mouseout', function() {
-            helloDiv.remove();
+                    const resultText = document.createElement('span');
+                    resultText.textContent = jsonResponse.result;
+                    resultText.style.cssText = 'font-weight: bold;';
+
+                    // Setting background color based on the result and confidence
+                    let bgColor = 'rgba(255, 0, 0, 0.8)'; // Default to red for 'fake'
+                    if (jsonResponse.result === 'real') {
+                        const greenIntensity = Math.round(255 * (jsonResponse.confidence)); // Scale the green based on confidence
+                        bgColor = `rgba(0, ${greenIntensity}, 0, 0.8)`;
+                    }
+                    resultDiv.style.cssText = 
+                    `position: absolute; color: white; background-color: ${bgColor}; padding: 10px; border-radius: 10px; z-index: 1000; pointer-events: none; display: flex; justify-content: space-between; width: 100%; font-family: Arial, sans-serif; font-size: 16px;`;
+
+                    resultDiv.appendChild(resultText);
+
+                    const confidenceText = document.createElement('span');
+                    confidenceText.textContent = (jsonResponse.confidence * 100).toFixed(2) + '%';
+                    confidenceText.style.cssText = 'margin-left: auto; opacity: 0.7;';
+                    resultDiv.appendChild(confidenceText);
+
+                    document.body.appendChild(resultDiv);
+
+                    // Position the resultDiv below the image
+                    const rect = imgElement.getBoundingClientRect();
+                    resultDiv.style.top = `${rect.bottom + window.scrollY + 5}px`;
+                    resultDiv.style.left = `${rect.left + window.scrollX}px`;
+                    resultDiv.style.width = `${rect.width - 20}px`;
+
+                    // Remove the resultDiv when the mouse moves away from the image
+                    imgElement.addEventListener('mouseout', function() {
+                        resultDiv.remove();
+                    }, { once: true });
+                })
+                .catch(error => {
+                    console.error('There was a problem with your fetch operation:', error);
+                });
+        }, 100); // Delay fetch call by 500 ms or other suitable delay based on expected server response time
+
+        imgElement.addEventListener('mouseout', function() {
+            clearTimeout(hoverTimer); // Clear the timer if the mouse leaves the image before the set time
         }, { once: true });
-    } else if (event.target.tagName === 'DIV' && event.target.childElementCount === 0) {
-        // Traverse upwards in the DOM until an ancestor div containing an image is found
-        let parentDiv = event.target.parentElement;
-        while (parentDiv && (!parentDiv.querySelector('img') || parentDiv.tagName !== 'DIV')) {
-            parentDiv = parentDiv.parentElement;
-        }
-
-        if (parentDiv && parentDiv.tagName === 'DIV') {
-            // Get the image element within the parent div
-            const imgElement = parentDiv.querySelector('img');
-            const imgSrc = imgElement.getAttribute('src');
-            // Log the image source to the console
-            console.log(imgSrc);
-
-            // Create a new div element to display 'Hello'
-            const helloDiv = document.createElement('div');
-            helloDiv.textContent = 'Hello';
-            helloDiv.style.cssText = 'position: absolute; color: white; background-color: black; padding: 5px; border-radius: 5px; z-index: 1000; pointer-events: none;';
-
-            // Append 'Hello' div to the body
-            document.body.appendChild(helloDiv);
-
-            // Position the helloDiv below the image
-            const rect = imgElement.getBoundingClientRect();
-            helloDiv.style.top = `${rect.bottom + window.scrollY}px`;
-            helloDiv.style.left = `${rect.left + window.scrollX}px`;
-
-            // Remove the 'Hello' div when the mouse moves away from the image
-            imgElement.addEventListener('mouseout', function() {
-                helloDiv.remove();
-            }, { once: true });
-        }
-    } else if (event.target.tagName === 'SPAN' && event.target.childElementCount === 0) {
-        // Traverse upwards in the DOM until an ancestor div containing an image is found
-        let parentDiv = event.target.parentElement;
-        while (parentDiv && (!parentDiv.querySelector('img') || parentDiv.tagName !== 'DIV')) {
-            parentDiv = parentDiv.parentElement;
-        }
-
-        if (parentDiv && parentDiv.tagName === 'DIV') {
-            // Get the image element within the parent div
-            const imgElement = parentDiv.querySelector('img');
-            const imgSrc = imgElement.getAttribute('src');
-
-            // Log the image source to the console
-            console.log(imgSrc);
-
-            // Create a new div element to display 'Hello'
-            const helloDiv = document.createElement('div');
-            helloDiv.textContent = 'Hello';
-            helloDiv.style.cssText = 'position: absolute; color: white; background-color: black; padding: 5px; border-radius: 5px; z-index: 1000; pointer-events: none;';
-
-            // Append 'Hello' div to the body
-            document.body.appendChild(helloDiv);
-
-            // Position the helloDiv below the image
-            const rect = imgElement.getBoundingClientRect();
-            helloDiv.style.top = `${rect.bottom + window.scrollY}px`;
-            helloDiv.style.left = `${rect.left + window.scrollX}px`;
-
-            // Remove the 'Hello' div when the mouse moves away from the image
-            event.target.addEventListener('mouseout', function() {
-                helloDiv.remove();
-            }, { once: true });
-        }
     }
-  });
+});
