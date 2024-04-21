@@ -22,18 +22,39 @@ After setting up the library, navigate yourself such that your working directory
 ```python
 python app.py
 ```
-which will open up a server at ``127.0.0.1:5000``, if this port is occupied on the localhost, additional work will need to be done to setup this program. 
+which will open up a server at ``127.0.0.1:5000``, if this port is occupied on the localhost, additional work will need to be done to set up this program. 
 
 > [!WARNING]  
-> This is a developmental server, and not ready for production. Using this flask server is not intended for continous use but furter development.
+> This is a developmental server, and not ready for production. Using this flask server is not intended for continuous use but for further development.
 
 
 ### Front End
-To setup the front end for this chrome extension, 
+This is primarily based upon use as a Chrome extension and thus will require a Chromium browser. This was primarily developed for Google Chrome, but other Chromium based browsers such as Edge and Brave should also work. 
 
+> [!IMPORTANT]  
+> Since Chrome Extensions are developed for Chromium, this extension is unlikely to work on Firefox.
 
+Here are the setup instructions:
+1. Open up the extensions manager as a part of your browser and turn on ``Developer Mode``
+2. Then click on ``Load unpacked``, and upload the folder ``~/Bitcamp2024/extensions``
+3. Afterward, you should see the extension loaded on your menu bar and begin operating. _Make sure to start the server before expecting results_
 
+# Methodology
+The primary algorithm to detect if an image is AI-Generated is to use a Convolution Neural Network (CNN). To train such an algorithm, we need a lot of data, a method to train, and a way to test if our results are useful or not. 
 
+## Data
+To get a variety of AI Generated and manmade images, we turned to datasets on Kaggle. Using Kaggle, we found out about 4 different datasets, each with its pros and cons. 
+1. {}
+2. {}
+3. {}
+4. {}
+
+For each of these datasets, we split the data into two classes, either "Fake" if it was AI Generated, or "Real" if it was human-drawn. Afterward, we split it into train, test, and validation folders for the model to learn and test itself, using a 0.8, 0.1, and 0.1 split. Due to the limited time in the hackathon, we were unable to experiment with different data splits, including 0.7, 0.2, and 0.1. 
+
+## Training
+To train our code, we did not have the large amount of data required to train a CNN from scratch, which we estimate to be at least 10 times the size of our largest dataset. As a result, we worked off a pre-existing model, the YoloV8 from Ultralytics, an industry-leading single classification model. Upon this model, we trained our 4 different datasets with a variety of epochs, from 10 to 50, depending on the size of the dataset, and the overall trend we noticed. Since we had limited compute availability and a severe time crunch, optimizing for image size was not a possibility, so a default value of ``640`` was used. 
+
+We trained a majority of our code on Google Collab, working off their L4 Hardware Accelerators. The code for training these systems can be found by ``train.ipynb``, and would download the small version of the model. Again, due to time constraints, we did not have the time to utilize the larger models such as the medium or large versions, and we found that nano was not great at picking apart minor differences. 
 
 # Results
 
