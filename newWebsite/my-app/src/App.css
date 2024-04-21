@@ -1,0 +1,227 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #022B5B;
+  color: #79BFCD;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Navigation Styles */
+nav {
+  background-color: #0A1A2E;
+  color: #BBE6DB;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 13vh;
+}
+
+.nav-links a {
+  color: #BBE6DB;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 2.5vh;
+  position: relative;
+  font-family: 'Poppins';
+  font-weight: 400;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: -4px;
+  left: 0;
+  background-color: #BBE6DB;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.logo-container img {
+  height: 10vh;
+  padding: 1vh;
+}
+
+.logo-container h1 {
+  font-size: 6vh;
+  font-family: 'Big Shoulders Stencil Text';
+  font-weight: 900;
+}
+
+.logo-container h2 {
+  padding: 2.5vh;
+  padding-right: 1vh;
+  font-size: 6vh;
+  font-family: 'Big Shoulders Stencil Text';
+  font-weight: 600;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Container Layout */
+.container {
+  display: flex;
+  height: 87vh;
+}
+
+.column1 {
+  flex: 1;
+  padding: 20px;
+}
+
+.column2 {
+  flex: 1.5;
+  padding: 20px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Text Box */
+.left-box {
+  background-color: #79BFCD;
+  margin: auto;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 90%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-box p {
+  color: #29697A;
+  padding: 5%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 2.4vh;
+  text-align: left;
+}
+
+.left-box h3 {
+  margin-top: auto;
+  color: #29697A;
+  font-family: 'Sirin Stencil';
+  font-size: 6vh;
+  word-spacing: 10px;
+}
+
+/* Main Body Styles */
+.body {
+  text-align: center;
+  padding: 20px;
+}
+
+.body h1 {
+  color: #1488B9;
+  font-size: 6rem;
+  font-family: 'Big Shoulders Stencil Text';
+  font-weight: 800;
+  padding: 20px;
+  line-height: 90%;
+}
+
+.body h2 {
+  color: #79BFCD;
+  font-family: 'Sirin Stencil';
+  font-size: 3rem;
+  padding-top: 0px;
+  line-height: 90%;
+}
+
+/* Game Section Styles */
+.game {
+  background-color: #0A1A2E;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 80%;
+  height: 75vh; /* Approximately 50% of the container's height */
+  display: flex;
+  flex-direction: column;
+  margin-left: 75px;
+}
+
+.imgBox {
+  height: 85%; /* The image box takes about half the height */
+  padding: 10px;
+  text-align: center;
+}
+
+.imgBox img {
+  max-width: 100%; /* Ensures the image fills the container's width */
+  max-height: 100%; /* Ensures the image fits within the box */
+  object-fit: cover; /* Ensures proper scaling without distortion */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers the buttons horizontally */
+  align-items: center;
+  margin-right: 30%;
+}
+
+button {
+  background-color: #1488B9;
+  color: #BBE6DB;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+button:hover {
+  background-color: #022B5B;
+  font-weight: 700;
+}
+
+.end-screen {
+  background-color: #0A1A2E; /* Consistent with the rest of the game */
+  color: #BBE6DB; /* Contrasting text color */
+  text-align: center; /* Centers the text */
+  padding: 40px; /* Adds some padding for spacing */
+  border-radius: 8px; /* Softens the corners */
+  width: 80%; /* Adjust width as needed */
+  margin: auto; /* Centers the end screen */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Adds a subtle shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links a {
+    margin-bottom: 10px;
+  }
+}
+

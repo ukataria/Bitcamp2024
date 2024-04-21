@@ -1,6 +1,8 @@
 archive/
 BitCamp2024/*
 BitCamp2024
+node*/
+/*venv
 venv/
 venv*/
 website2/audit-ai/node_modules*/
