@@ -11,3 +11,4 @@ yolov5/
 __pycache__/
 website/audit-ai/node_modules/*
 newWebsite/my-app/node_modules*/
+MEDIA*/
