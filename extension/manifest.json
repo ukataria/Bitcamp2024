@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Image Greeting and Log",
-  "version": "1.0",
-  "description": "Add 'Hello' under images on any website and log image details",
+  "name": "Audit AI",
+  "version": "6.2",
+  "description": "Verify the integrity of images and videos on the web using AI.",
   "permissions": ["activeTab"],
   "action": {
     "default_popup": "defaultpage.html"

@@ -16,12 +16,13 @@
             height: 100vh;
             border: 3px solid #007BFF;
             box-sizing: border-box;
-            overflow: hidden; /* Add this to remove scrolling */
+            overflow: hidden; /* Keeps content from scrolling */
+            border-radius: 20px; /* Rounds the corners of the border */
         }
 
         h1 {
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 20px; /* Increased bottom margin */
         }
 
         .button {
@@ -36,6 +37,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            margin-top: 20px; /* Added top margin for space above the button */
         }
 
         .button:hover {
@@ -45,10 +47,11 @@
         .content {
             text-align: center;
             max-width: 400px;
+            padding: 20px; /* Added padding for spacing around content */
         }
 
         p {
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Increased bottom margin */
             color: #666;
         }
 
@@ -56,37 +59,42 @@
             max-width: 100%; /* Ensures images do not exceed their container */
             height: auto; /* Maintains aspect ratio */
             border-radius: 10px;
+            margin-bottom: 15px; /* Added bottom margin for space below images */
         }
 
         .logo {
             width: 100px; /* Specific size for logo */
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Increased bottom margin */
         }
 
         .demo-image {
             width: 300px; /* Specific size for demo image */
-            margin-bottom: 5px; /* Reduced margin to bring it closer to the status box */
-            cursor: pointer;
+            cursor: pointer; /* Indicates clickable */
         }
 
         .result-div {
             color: white;
             background-color: rgba(255, 0, 0, 0.8); /* Default red background */
-            padding: 8px 15px; /* Reduced padding for a smaller box */
+            padding: 8px 15px; /* Padding adjustment */
             border-radius: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 90%; /* Increased width */
-            max-width: 350px; /* Adjust maximum width to better fit the image width */
+            max-width: 350px; /* Adjust maximum width */
             font-family: Arial, sans-serif;
             font-size: 16px;
-            margin-top: 5px; /* Smaller margin to reduce space between image and box */
+            margin-top: 10px; /* Increased margin to space out from image above */
+            overflow: hidden; /* Keeps content from scrolling */
         }
 
         .ai-count {
-            margin-top: 20px;
+            margin-top: 20px; /* Consistent spacing at the bottom */
             font-size: 16px;
+        }
+        .content {
+            font-family: 'Courier New', monospace;
+            /* Other styles... */
         }
     </style>
 </head>
@@ -94,10 +102,11 @@
     <div class="content">
         <img src="https://cdn.discordapp.com/attachments/1200257094356586646/1231518856946651147/image.png?ex=66374050&is=6624cb50&hm=1d6d74d5c6e8c6c77761dfa1f5aa8d798aa03cb9cd6c324afe29c3511d2c6973&" alt="Audit AI Logo" class="logo">
         <h1>Audit AI</h1>
-        <p>Automatically verify the authenticity of images.</p>
-        <img src="https://cdn-icons-png.flaticon.com/512/5110/5110617.png" alt="Sample Image" class="demo-image">
-        <div class="result-div"><span>Real</span> - Confidence: <span>85%</span></div>
-        <a href="https://ukataria.github.io/Bitcamp2024/" class="button">Try Audit AI</a>
+        <p>Automatically verify the authenticity of images. Hold the Control Key over images to use! For Example: </p>
+        <img src="https://www.indiewire.com/wp-content/uploads/2024/02/Screen-Shot-2024-02-23-at-8.54.34-AM.png?w=600&h=337&crop=1" alt="Sample Image" class="demo-image">
+        <div class="result-div"><span>Fake</span> - Confidence: <span>90%</span></div>
+        <a href="audit-ai.co" class="button">Try Audit AI</a>
+        
     </div>
 </body>
 </html>
