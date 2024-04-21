@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import logo from './media/logo.png';
 import fake1 from './quizPhotos/fake1.jpg';
+import fake2 from './quizPhotos/fake2.jpg';
 import fake5 from './quizPhotos/fake5.jpg';
-import fake6 from './quizPhotos/fake6.jpg';
 import fake7 from './quizPhotos/fake7.jpg';
 import fake9 from './quizPhotos/fake9.jpg';
 import fake10 from './quizPhotos/fake10.jpg';
@@ -17,8 +17,8 @@ import './App.css';
 function App() {
   const quizPhotos = [
     { src: fake1, isFake: true },
+    { src: fake2, isFake: true },
     { src: fake5, isFake: true },
-    { src: fake6, isFake: true },
     { src: fake7, isFake: true },
     { src: fake9, isFake: true },
     { src: fake10, isFake: true },
@@ -46,21 +46,21 @@ function App() {
     const nextIndex = currentImageIndex + 1;
 
     if (nextIndex >= totalImages) {
-      setGameOver(true);
+      setGameOver(true); // Game ends when all images have been displayed
     } else {
-      setCurrentImageIndex(nextIndex);
+      setCurrentImageIndex(nextIndex); // Move to the next image
     }
   };
 
   const calculatePercentageCorrect = () => {
-    return (correctAnswers / totalImages) * 100;
+    return (correctAnswers / totalImages) * 100; // Calculate accuracy
   };
 
   const renderEndScreen = () => {
     const correctPercentage = calculatePercentageCorrect();
     const aiAccuracy = 95;
 
-    let resultMessage = '';
+    let resultMessage = ''; // Initialize the result message
 
     if (correctPercentage > aiAccuracy) {
       resultMessage = 'You Win! You beat the AI!';
@@ -69,9 +69,9 @@ function App() {
     }
 
     return (
-      <div className="game">
+      <div> {/* Ensures the end screen has the correct styling */}
         <h2>{resultMessage}</h2>
-        <p>You answered with {correctPercentage.toFixed(2)}% accuracy</p>
+        <p>You answered with {correctPercentage.toFixed(2)}% accuracy</p> {/* Display the player's accuracy */}
       </div>
     );
   };
@@ -100,7 +100,7 @@ function App() {
           </div>
           <div className="left-box">
             <p>
-              Welcome to Audit AI's Image guessing game! With AI generators like DALLE 2 and Stable Diffusion, it's increasingly hard to detect if an image is AI-generated. Our trained ML model has 95% accuracy on this subset of 12 images. Can you do better? Start playing to find out.
+              Welcome to Audit AI's Image guessing game! With AI generators like DALLE 2 and Stable Diffusion, it's increasingly hard to detect if an image is AI-generated. Our trained ML model has 94% accuracy on this subset of 16 images. Can you do better? Start playing to find out.
             </p>
             <h3>Correct Answers: {correctAnswers}</h3>
           </div>
@@ -108,8 +108,8 @@ function App() {
 
         <div className="column2">
           {gameOver ? (
-            <div className="game">
-              {renderEndScreen()} {/* Display the end screen when the game is over */}
+            <div className="end-screen"> {/* Ensures the end screen has the correct styling */}
+              {renderEndScreen()} {/* Show the end screen when the game ends */}
             </div>
           ) : (
             <div className="game">
