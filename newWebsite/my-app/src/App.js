@@ -1,33 +1,33 @@
 import React, { useState } from 'react';
 import logo from './media/logo.png';
 import fake1 from './quizPhotos/fake1.jpg';
-import fake2 from './quizPhotos/fake2.jpg';
-import fake5 from './quizPhotos/fake5.jpg';
-import fake7 from './quizPhotos/fake7.jpg';
-import fake9 from './quizPhotos/fake9.jpg';
-import fake10 from './quizPhotos/fake10.jpg';
+import fake2 from './quizPhotos/fake2.jpeg';
+import fake5 from './quizPhotos/fake5.jpeg';
+import fake7 from './quizPhotos/fake7.jpeg';
+import fake9 from './quizPhotos/fake9.jpeg';
+import fake10 from './quizPhotos/fake10.jpeg';
 import real3 from './quizPhotos/real3.jpg';
 import real4 from './quizPhotos/real4.jpg';
 import real5 from './quizPhotos/real5.jpg';
 import real6 from './quizPhotos/real6.jpg';
 import real9 from './quizPhotos/real9.jpg';
-import real10 from './quizPhotos/real10.jpg';
+import real10 from './quizPhotos/real10.jpeg';
 import './App.css';
 
 function App() {
   const quizPhotos = [
-    { src: fake1, isFake: true },
-    { src: fake2, isFake: true },
+    { src: real4, isFake: false },
     { src: fake5, isFake: true },
-    { src: fake7, isFake: true },
-    { src: fake9, isFake: true },
+    { src: fake1, isFake: true },
     { src: fake10, isFake: true },
     { src: real3, isFake: false },
-    { src: real4, isFake: false },
+    { src: fake2, isFake: true },
     { src: real5, isFake: false },
-    { src: real6, isFake: false },
-    { src: real9, isFake: false },
     { src: real10, isFake: false },
+    { src: fake7, isFake: true },
+    { src: real9, isFake: false },
+    { src: fake9, isFake: true },
+    { src: real6, isFake: false },
   ];
 
   const totalImages = quizPhotos.length;
