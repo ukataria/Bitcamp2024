@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Image Greeting and Log",
+  "name": "Audit AI",
   "version": "1.0",
-  "description": "Add 'Hello' under images on any website and log image details",
+  "description": "Instantly discern the authenticity of online artwork, ensuring trust and credibility in digital art",
   "permissions": ["activeTab"],
   "action": {
     "default_popup": "defaultpage.html"
