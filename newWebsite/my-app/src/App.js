@@ -12,6 +12,7 @@ import real5 from './quizPhotos/real5.jpg';
 import real6 from './quizPhotos/real6.jpg';
 import real9 from './quizPhotos/real9.jpg';
 import real10 from './quizPhotos/real10.jpeg';
+import cryingGif from './quizPhotos/cryinggif.gif';
 import './App.css';
 
 function App() {
@@ -58,20 +59,24 @@ function App() {
 
   const renderEndScreen = () => {
     const correctPercentage = calculatePercentageCorrect();
-    const aiAccuracy = 95;
-
-    let resultMessage = ''; // Initialize the result message
-
-    if (correctPercentage > aiAccuracy) {
-      resultMessage = 'You Win! You beat the AI!';
-    } else {
-      resultMessage = 'You Lose! The AI beat you!';
-    }
-
+    const aiAccuracy = 90;
+    const userLost = correctPercentage < aiAccuracy; // Determine if the user lost
+  
+    let resultMessage = userLost
+      ? 'You Lose! The AI beat you!'
+      : 'You Win! You beat the AI!';
+  
     return (
-      <div> {/* Ensures the end screen has the correct styling */}
+      <div>
         <h2>{resultMessage}</h2>
-        <p>You answered with {correctPercentage.toFixed(2)}% accuracy</p> {/* Display the player's accuracy */}
+        <p>You answered with {correctPercentage.toFixed(2)}% accuracy</p>
+        {userLost && (
+          <img
+            src={cryingGif}
+            alt="Crying GIF"
+            style={{ width: '50%', margin: '20px auto' }}
+          />
+        )}
       </div>
     );
   };
@@ -100,7 +105,7 @@ function App() {
           </div>
           <div className="left-box">
             <p>
-              Welcome to Audit AI's Image guessing game! With AI generators like DALLE 2 and Stable Diffusion, it's increasingly hard to detect if an image is AI-generated. Our trained ML model has 94% accuracy on this subset of 16 images. Can you do better? Start playing to find out.
+              Welcome to Audit AI's Image guessing game! With AI generators like DALLE 2 and Stable Diffusion, it's increasingly hard to detect if an image is AI-generated. Our trained ML model has 90% accuracy on this subset of 12 images. Can you do better? Start playing to find out.
             </p>
             <h3>Correct Answers: {correctAnswers}</h3>
           </div>
