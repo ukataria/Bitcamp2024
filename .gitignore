@@ -4,7 +4,10 @@ BitCamp2024
 node*/
 /*venv
 venv/
+venv*/
+website2/audit-ai/node_modules*/
 yolov5/
 *.pyc
 __pycache__/
-website2/audit-ai/node_modules*/
+website/audit-ai/node_modules/*
+newWebsite/my-app/node_modules*/

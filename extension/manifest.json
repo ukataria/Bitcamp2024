@@ -4,27 +4,16 @@
   "version": "1.0",
   "description": "Add 'Hello' under images on any website and log image details",
   "permissions": ["activeTab"],
-  "host_permissions": [
-    "https://guarded-wildwood-07790-f63d3116a68b.herokuapp.com/"
-  ],
+  "action": {
+    "default_popup": "defaultpage.html"
+  },
   "content_scripts": [
     {
       "matches": [
-        "*://*.facebook.com/*",
-        "*://*.twitter.com/*",
-        "*://*.instagram.com/*",
-        "*://*.pinterest.com/*",
-        "*://*.tumblr.com/*",
-        "*://*.imgur.com/*",
-        "*://*.flickr.com/*",
-        "*://*.reddit.com/*",
-        "*://*.500px.com/*",
-        "*://*.unsplash.com/*",
-        "*://*.deviantart.com/*",
-        "*://*.photobucket.com/*"
+        "<all_urls>"
       ],
       "js": ["scripts/content.js"],
-      "css": ["./style.css"] 
+      "css": ["style.css"] 
     }
   ]
 }
