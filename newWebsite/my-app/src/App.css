@@ -76,6 +76,22 @@ nav {
   align-items: center;
 }
 
+.container {
+  display: flex;
+  height: 87vh;
+}
+
+.column1 {
+  flex: 1; /* Each column takes up equal space */
+  padding: 20px;
+}
+.column2 {
+  flex: 1.5; /* Each column takes up equal space */
+  padding: 20px;
+  align-self: center;
+}
+
+
 /* Main Body Styles */
 .body {
   text-align: center;
@@ -84,7 +100,7 @@ nav {
 
 .body h1 {
   color: #1488B9;
-  font-size: 4.5rem;
+  font-size: 6rem;
   font-family: 'Big Shoulders Stencil Text';
   font-weight: 800;
   padding: 20px;
@@ -94,7 +110,7 @@ nav {
 .body h2 {
   color: #79BFCD;
   font-family: 'Sirin Stencil';
-  font-size: 2.25rem;
+  font-size: 3rem;
   padding-top: 0px;
   line-height: 90%;
 }

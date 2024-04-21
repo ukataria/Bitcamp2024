@@ -18,21 +18,27 @@ function App() {
             <a href="https://youtube.com">Youtube Video</a>
           </div>
       </nav>
-
-      <div class="body">
-        <h1>AUDIT AI</h1>
-        <h2>CHAT, IS THIS REAL?</h2>
-      </div>
-
-      <div class = "game">
-        <p>Welcome to Audit AI's Image guessing game! In the new world, with AI generators like DALLE 2 and Stable Diffusion, it bcomes increasingly hard to detect if an image is AI generated. Our trained ML model has an accuracy of 95% on this subset of 20 images, do you think you can do better? Start playing the game to find out, and realize just how good some AI images can get.</p>
-        <h3>Correct Answers: 0</h3>
-        <div class = "imgBox">
-          <img src = {quizPhoto} alt="The Fake Image" class="center-fit"/>
+      <div class="container">
+        <div class="column1">
+          <div class="body">
+            <h1>AUDIT AI</h1>
+            <h2>CHAT, IS THIS REAL?</h2>
+          </div>
+          <div class="left-box">
+              <p>Welcome to Audit AI's Image guessing game! In the new world, with AI generators like DALLE 2 and Stable Diffusion, it bcomes increasingly hard to detect if an image is AI generated. Our trained ML model has an accuracy of 95% on this subset of 20 images, do you think you can do better? Start playing the game to find out, and realize just how good some AI images can get.</p>
+              <h3>Correct Answers: 0</h3>
+          </div>
         </div>
-        <button>Real</button>
-        <button>Fake</button>
-      </div>
+        <div class="column2">
+          <div class = "game">
+            <div class = "imgBox">
+              <img src = {quizPhoto} alt="The Fake Image" class="center-fit"/>
+            </div>
+            <button>Real</button>
+            <button>Fake</button>
+          </div>
+        </div>
+    </div>
 
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
