@@ -24,9 +24,9 @@ def analyze():
     print()
 
     result = model(image_url)[0]
-    localPath = image_url.split("/")[-1]
     
     try:
+        localPath = image_url.split("/")[-1]    
         os.remove(localPath)
     except:
         print("Didn't delete")
