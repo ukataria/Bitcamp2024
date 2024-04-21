@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Popup</title>
+    <title>Audit AI</title>
     <style>
         body {
             min-width: 250px;
             padding: 20px;
             font-family: Arial, sans-serif;
             font-size: 14px;
-            background-color: #f4f4f4;
+            background-color: #e0f7fa; /* Light blue background */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
+            border: 3px solid #007BFF; /* Blue border */
+            box-sizing: border-box;
         }
 
         h1 {
             color: #333;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .button {
@@ -41,20 +43,36 @@
 
         .content {
             text-align: center;
-            max-width: 300px;
+            max-width: 400px;
         }
 
         p {
             margin-bottom: 20px;
             color: #666;
         }
+
+        .instructions {
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 50px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
     <div class="content">
-        <h1>Hello World</h1>
-        <p>Discover more features and seamless integration by visiting our website!</p>
-        <a href="https://ukataria.github.io/Bitcamp2024/" class="button">Visit Our Website</a>
+        <h1>Audit AI</h1>
+        <p>Automatically verify the authenticity of images.</p>
+        <div class="instructions">
+            <h2>How to Use:</h2>
+            <p>Hold the <img src="https://png.pngtree.com/png-clipart/20230822/original/pngtree-computer-control-key-ctrl-button-picture-image_8174434.png" alt="Control Key"> Control key and click on the image you want to check.</p>
+        </div>
+        <a href="https://ukataria.github.io/Bitcamp2024/" class="button">Try Audit AI</a>
     </div>
 </body>
 </html>
