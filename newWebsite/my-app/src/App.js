@@ -31,13 +31,20 @@ function App() {
     { src: real6, isFake: false },
   ];
 
-  const totalImages = quizPhotos.length;
+  const quizPhotosNew = [
+    { src: real4, isFake: false },
+    { src: fake5, isFake: true },
+    { src: fake1, isFake: true },
+    { src: real3, isFake: true },
+  ];
+
+  const totalImages = quizPhotosNew.length;
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [gameOver, setGameOver] = useState(false);
 
   const handleButtonClick = (guess) => {
-    const currentPhoto = quizPhotos[currentImageIndex];
+    const currentPhoto = quizPhotosNew[currentImageIndex];
     const isCorrect = currentPhoto.isFake === guess;
 
     if (isCorrect) {
@@ -105,7 +112,7 @@ function App() {
           </div>
           <div className="left-box">
             <p>
-              Welcome to Audit AI's Image guessing game! With AI generators like DALLE 2 and Stable Diffusion, it's increasingly hard to detect if an image is AI-generated. Our trained ML model has 90% accuracy on this subset of 12 images. Can you do better? Start playing to find out.
+              Welcome to Audit AI's Image guessing game! With AI generators like DALLE 2 and Stable Diffusion, it's increasingly hard to detect if an image is AI-generated. Our trained ML model has 90% accuracy in determining an image's "realness." Can you do better? Start playing to find out.
             </p>
             <h3>Correct Answers: {correctAnswers}</h3>
           </div>
@@ -119,7 +126,7 @@ function App() {
           ) : (
             <div className="game">
               <div className="imgBox">
-                <img src={quizPhotos[currentImageIndex].src} alt="Quiz Image" className="center-fit" />
+                <img src={quizPhotosNew[currentImageIndex].src} alt="Quiz Image" className="center-fit" />
               </div>
               <div className="buttons">
                 <button onClick={() => handleButtonClick(true)}>AI GENERATED</button>
