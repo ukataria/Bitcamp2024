@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all domains on all routes
 
 # Load your custom model
-model = YOLO('v6.pt')
+model = YOLO('V4.pt')
 
 @app.route('/analyze', methods=['POST'])
 def analyze():

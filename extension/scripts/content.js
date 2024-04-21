@@ -5,12 +5,15 @@ document.addEventListener('mouseover', function(event) {
 
         const imageUrl = imgElement.getAttribute('src'); // Get image URL
 
+        console.log('Image URL:', imageUrl); 
+
         hoverTimer = setTimeout(() => { // Set a timeout to delay the fetch call
             // Define the data object for the POST request
             const data = {
+                mode: 'no-cors',
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    //'Content-Type': 'application/json',
                     'imgurl': imageUrl
                 }
             };
