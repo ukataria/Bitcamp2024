@@ -6,7 +6,6 @@ import sauronReal from './quizPhotos/sauron-real.webp';
 import './App.css';
 
 function App() {
-  // List of images for the quiz and whether they are real or fake
   const quizPhotos = [
     { src: hackathonFake, isFake: true },
     { src: sauronFake, isFake: true },
@@ -45,21 +44,28 @@ function App() {
         </div>
       </nav>
 
-      <div className="body">
-        <h1>AUDIT AI</h1>
-        <h2>CHAT, IS THIS REAL?</h2>
-      </div>
-
-      <div className="game">
-        <p>
-          Welcome to Audit AI's Image guessing game! In the new world, with AI generators like DALLE 2 and Stable Diffusion, it becomes increasingly hard to detect if an image is AI-generated. Our trained ML model has an accuracy of 95% on this subset of 20 images. Do you think you can do better? Start playing the game to find out, and realize just how good some AI images can get.
-        </p>
-        <h3>Correct Answers: {correctAnswers}</h3>
-        <div className="imgBox">
-          <img src={quizPhotos[currentImageIndex].src} alt="Quiz Image" className="center-fit" />
+      <div className="container">
+        <div className="column1">
+          <div className="body">
+            <h1>AUDIT AI</h1>
+            <h2>CHAT, IS THIS REAL?</h2>
+          </div>
+          <div className="left-box">
+            <p>
+              Welcome to Audit AI's Image guessing game! With AI generators like DALLE 2 and Stable Diffusion, it's increasingly hard to detect if an image is AI-generated. Our trained ML model has 95% accuracy on this subset of 20 images. Can you do better? Start playing to find out.
+            </p>
+            <h3>Correct Answers: {correctAnswers}</h3>
+          </div>
         </div>
-        <button onClick={() => handleButtonClick(true)}>Fake</button> 
-        <button onClick={() => handleButtonClick(false)}>Real</button>
+        <div className="column2">
+          <div className="game">
+            <div className="imgBox">
+              <img src={quizPhotos[currentImageIndex].src} alt="Quiz Image" className="center-fit" />
+            </div>
+            <button onClick={() => handleButtonClick(true)}>Fake</button>
+            <button onClick={() => handleButtonClick(false)}>Real</button>
+          </div>
+        </div>
       </div>
     </div>
   );
