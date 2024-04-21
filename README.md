@@ -61,6 +61,4 @@ To test our code, we used both the built-in test folder of data and a variety of
 
 This is why we implemented a real-world testing procedure of working on Pinterest images that none of the models had ever seen, and then using that to judge overall performance. We would test for confidence and accuracy levels, and throughout the hackathon, we continued to find better datasets and improvements to further fine tune our models and increase their performance. 
 
-# Results
 
-# Demo Video
