@@ -1,5 +1,5 @@
 document.addEventListener('mouseover', function(event) {
-    if (event.target.tagName === 'IMG') {
+    if (event.target.tagName === 'IMG' && event.ctrlKey) { // Check if the image is being hovered over and Ctrl key is pressed
         let imgElement = event.target;
         let hoverTimer; // Timer for delaying the fetch call
 
@@ -63,10 +63,24 @@ document.addEventListener('mouseover', function(event) {
                 .catch(error => {
                     console.error('There was a problem with your fetch operation:', error);
                 });
-        }, 100); // Delay fetch call by 500 ms or other suitable delay based on expected server response time
+        }, 100); // Delay fetch call by 100 ms or other suitable delay based on expected server response time
 
         imgElement.addEventListener('mouseout', function() {
             clearTimeout(hoverTimer); // Clear the timer if the mouse leaves the image before the set time
         }, { once: true });
+    }
+});
+
+// Listen to the 'keyup' and 'keydown' events to handle the Ctrl key state
+let ctrlPressed = false;
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Control") {
+        ctrlPressed = true;
+    }
+});
+
+document.addEventListener('keyup', function(event) {
+    if (event.key === "Control") {
+        ctrlPressed = false;
     }
 });
