@@ -145,8 +145,7 @@ button:hover {
 }
 
 .imgbox {
-  display: grid;
-  height: 10%;
+  height: 1vh;
 }
 
 .center-fit {
