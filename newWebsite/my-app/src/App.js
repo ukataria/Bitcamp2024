@@ -1,33 +1,34 @@
 import React, { useState } from 'react';
 import logo from './media/logo.png';
 import fake1 from './quizPhotos/fake1.jpg';
-import fake2 from './quizPhotos/fake2.jpg';
-import fake5 from './quizPhotos/fake5.jpg';
-import fake7 from './quizPhotos/fake7.jpg';
-import fake9 from './quizPhotos/fake9.jpg';
-import fake10 from './quizPhotos/fake10.jpg';
+import fake2 from './quizPhotos/fake2.jpeg';
+import fake5 from './quizPhotos/fake5.jpeg';
+import fake7 from './quizPhotos/fake7.jpeg';
+import fake9 from './quizPhotos/fake9.jpeg';
+import fake10 from './quizPhotos/fake10.jpeg';
 import real3 from './quizPhotos/real3.jpg';
 import real4 from './quizPhotos/real4.jpg';
 import real5 from './quizPhotos/real5.jpg';
 import real6 from './quizPhotos/real6.jpg';
 import real9 from './quizPhotos/real9.jpg';
-import real10 from './quizPhotos/real10.jpg';
+import real10 from './quizPhotos/real10.jpeg';
+import cryingGif from './quizPhotos/cryinggif.gif';
 import './App.css';
 
 function App() {
   const quizPhotos = [
-    { src: fake1, isFake: true },
-    { src: fake2, isFake: true },
+    { src: real4, isFake: false },
     { src: fake5, isFake: true },
-    { src: fake7, isFake: true },
-    { src: fake9, isFake: true },
+    { src: fake1, isFake: true },
     { src: fake10, isFake: true },
     { src: real3, isFake: false },
-    { src: real4, isFake: false },
+    { src: fake2, isFake: true },
     { src: real5, isFake: false },
-    { src: real6, isFake: false },
-    { src: real9, isFake: false },
     { src: real10, isFake: false },
+    { src: fake7, isFake: true },
+    { src: real9, isFake: false },
+    { src: fake9, isFake: true },
+    { src: real6, isFake: false },
   ];
 
   const totalImages = quizPhotos.length;
@@ -58,20 +59,24 @@ function App() {
 
   const renderEndScreen = () => {
     const correctPercentage = calculatePercentageCorrect();
-    const aiAccuracy = 95;
-
-    let resultMessage = ''; // Initialize the result message
-
-    if (correctPercentage > aiAccuracy) {
-      resultMessage = 'You Win! You beat the AI!';
-    } else {
-      resultMessage = 'You Lose! The AI beat you!';
-    }
-
+    const aiAccuracy = 90;
+    const userLost = correctPercentage < aiAccuracy; // Determine if the user lost
+  
+    let resultMessage = userLost
+      ? 'You Lose! The AI beat you!'
+      : 'You Win! You beat the AI!';
+  
     return (
-      <div> {/* Ensures the end screen has the correct styling */}
+      <div>
         <h2>{resultMessage}</h2>
-        <p>You answered with {correctPercentage.toFixed(2)}% accuracy</p> {/* Display the player's accuracy */}
+        <p>You answered with {correctPercentage.toFixed(2)}% accuracy</p>
+        {userLost && (
+          <img
+            src={cryingGif}
+            alt="Crying GIF"
+            style={{ width: '50%', margin: '20px auto' }}
+          />
+        )}
       </div>
     );
   };
@@ -100,7 +105,7 @@ function App() {
           </div>
           <div className="left-box">
             <p>
-              Welcome to Audit AI's Image guessing game! With AI generators like DALLE 2 and Stable Diffusion, it's increasingly hard to detect if an image is AI-generated. Our trained ML model has 94% accuracy on this subset of 16 images. Can you do better? Start playing to find out.
+              Welcome to Audit AI's Image guessing game! With AI generators like DALLE 2 and Stable Diffusion, it's increasingly hard to detect if an image is AI-generated. Our trained ML model has 90% accuracy on this subset of 12 images. Can you do better? Start playing to find out.
             </p>
             <h3>Correct Answers: {correctAnswers}</h3>
           </div>
