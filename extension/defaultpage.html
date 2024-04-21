@@ -8,14 +8,15 @@
             padding: 20px;
             font-family: Arial, sans-serif;
             font-size: 14px;
-            background-color: #e0f7fa; /* Light blue background */
+            background-color: #e0f7fa;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            border: 3px solid #007BFF; /* Blue border */
+            border: 3px solid #007BFF;
             box-sizing: border-box;
+            overflow: hidden; /* Add this to remove scrolling */
         }
 
         h1 {
@@ -51,27 +52,51 @@
             color: #666;
         }
 
-        .instructions {
-            background: #ffffff;
-            padding: 10px;
-            border-radius: 5px;
+        img {
+            max-width: 100%; /* Ensures images do not exceed their container */
+            height: auto; /* Maintains aspect ratio */
+            border-radius: 10px;
+        }
+
+        .logo {
+            width: 100px; /* Specific size for logo */
             margin-bottom: 20px;
         }
 
-        img {
-            width: 50px;
-            vertical-align: middle;
+        .demo-image {
+            width: 300px; /* Specific size for demo image */
+            margin-bottom: 5px; /* Reduced margin to bring it closer to the status box */
+            cursor: pointer;
+        }
+
+        .result-div {
+            color: white;
+            background-color: rgba(255, 0, 0, 0.8); /* Default red background */
+            padding: 8px 15px; /* Reduced padding for a smaller box */
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%; /* Increased width */
+            max-width: 350px; /* Adjust maximum width to better fit the image width */
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin-top: 5px; /* Smaller margin to reduce space between image and box */
+        }
+
+        .ai-count {
+            margin-top: 20px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
     <div class="content">
+        <img src="https://cdn.discordapp.com/attachments/1200257094356586646/1231518856946651147/image.png?ex=66374050&is=6624cb50&hm=1d6d74d5c6e8c6c77761dfa1f5aa8d798aa03cb9cd6c324afe29c3511d2c6973&" alt="Audit AI Logo" class="logo">
         <h1>Audit AI</h1>
         <p>Automatically verify the authenticity of images.</p>
-        <div class="instructions">
-            <h2>How to Use:</h2>
-            <p>Hold the <img src="https://png.pngtree.com/png-clipart/20230822/original/pngtree-computer-control-key-ctrl-button-picture-image_8174434.png" alt="Control Key"> Control key and click on the image you want to check.</p>
-        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/5110/5110617.png" alt="Sample Image" class="demo-image">
+        <div class="result-div"><span>Real</span> - Confidence: <span>85%</span></div>
         <a href="https://ukataria.github.io/Bitcamp2024/" class="button">Try Audit AI</a>
     </div>
 </body>

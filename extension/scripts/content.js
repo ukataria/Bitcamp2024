@@ -10,10 +10,9 @@ document.addEventListener('mouseover', function(event) {
         hoverTimer = setTimeout(() => { // Set a timeout to delay the fetch call
             // Define the data object for the POST request
             const data = {
-                mode: 'no-cors',
                 method: 'POST',
                 headers: {
-                    //'Content-Type': 'application/json',
+                    'Content-Type': 'application/json',
                     'imgurl': imageUrl
                 }
             };
