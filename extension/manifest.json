@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Audit AI",
-  "version": "1.0",
-  "description": "Instantly discern the authenticity of online artwork, ensuring trust and credibility in digital art",
+  "version": "6.2",
+  "description": "Verify the integrity of images and videos on the web using AI.",
   "permissions": ["activeTab"],
   "action": {
     "default_popup": "defaultpage.html"

@@ -12,7 +12,7 @@ document.addEventListener('mouseover', function(event) {
             const data = {
                 method: 'POST',
                 headers: {
-                    //'Content-Type': 'application/json',
+                    'Content-Type': 'application/json',
                     'imgurl': imageUrl
                 }
             };
