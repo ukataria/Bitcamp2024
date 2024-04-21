@@ -8,3 +8,4 @@ yolov5/
 *.pyc
 __pycache__/
 website/audit-ai/node_modules/*
+newWebsite/my-app/node_modules*/
